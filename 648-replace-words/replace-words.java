@@ -42,7 +42,7 @@ class Solution {
         }
 
         String[] list = sentence.split(" ");
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for(int i=0;i<list.length;i++)
         {
             boolean flag = true;
@@ -51,16 +51,16 @@ class Solution {
             {
                 if(set.contains(s.substring(0,j+1)))
                 {
-                    str += s.substring(0,j+1)+" ";
+                    str.append(s.substring(0,j+1)+" ");
                     flag = false;
                     break;
                 }
             }
             if(flag)
             {
-                str += s+" ";
+                str.append(s+" ");
             }
         }
-        return str.substring(0,str.length()-1);
+        return str.substring(0,str.length()-1).toString();
     }
 }
